@@ -13,7 +13,7 @@ public class fila {
         notify(); // Notifica a los cajeros en espera
     }
 
-    public synchronized void retirarCliente() {
+    public synchronized cliente retirarCliente() {
         while (filaClientes.isEmpty()) {
             try {
                 wait(); // Espera si no hay clientes
@@ -23,5 +23,10 @@ public class fila {
         }
         cliente cliente = filaClientes.remove(0);
         System.out.println("Cliente " + cliente.getUid() + " retirado de la fila.");
+        return cliente;
+    }
+
+    public boolean hayClientes() {
+        return !filaClientes.isEmpty();
     }
 }
