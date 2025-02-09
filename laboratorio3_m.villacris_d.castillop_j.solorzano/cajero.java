@@ -28,7 +28,7 @@ public class cajero extends Thread {
             Thread.currentThread().interrupt();
         }
         System.out.println("Cajero " + id + " ha terminado de procesar al cliente " + cliente.getUid() + ".");
-        factorDeCansancio += tiempoProcesamientoActual*0.1;
+        factorDeCansancio += tiempoProcesamientoActual*0.001;
     }
 }
 

@@ -13,8 +13,7 @@ public class cliente extends Thread {
     
     @Override
     public void run() {
-        
-            int uid = contadorClientes++; 
+        for (int uid = 0; uid < 100; uid++) {
             int tiempoProcesamiento = rand.nextInt(2001); 
     
             cliente nuevoCliente = new cliente(fila);
@@ -28,7 +27,7 @@ public class cliente extends Thread {
                 Thread.currentThread().interrupt();
             }
 
-        
+        }
     }
     
     public void setUid(int uid) {
