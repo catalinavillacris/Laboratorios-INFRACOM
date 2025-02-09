@@ -13,7 +13,7 @@ public class cliente extends Thread {
     
     @Override
     public void run() {
-        for (int i = 0; i < 100; i++) { 
+        
             int uid = contadorClientes++; 
             int tiempoProcesamiento = rand.nextInt(2001); 
     
@@ -28,13 +28,7 @@ public class cliente extends Thread {
                 Thread.currentThread().interrupt();
             }
 
-            fila.retirarCliente();
-            try {
-                Thread.sleep(rand.nextInt(501)); 
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-        }
+        
     }
     
     public void setUid(int uid) {
